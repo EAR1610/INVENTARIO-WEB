@@ -51,6 +51,12 @@
 			<artifactId>mysql-connector-j</artifactId>
 			<version>8.0.33</version>
 		</dependency>
+		<dependency>
+			<groupId>org.mariadb.jdbc</groupId>
+			<artifactId>mariadb-java-client</artifactId>
+			<version>3.1.3</version>
+		</dependency>
+
 
 		<!-- <dependency>s
 			<groupId>org.springframework.security</groupId>
