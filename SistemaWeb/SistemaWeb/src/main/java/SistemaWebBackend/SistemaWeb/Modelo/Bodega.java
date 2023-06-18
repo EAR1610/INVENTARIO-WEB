@@ -25,6 +25,4 @@ public class Bodega {
     private boolean principalBodega;
     private String imagenBodega;
     private boolean estadoBodega;
-
-    
 }
