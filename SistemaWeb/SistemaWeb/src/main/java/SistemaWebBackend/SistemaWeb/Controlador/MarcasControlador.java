@@ -52,7 +52,7 @@ public class MarcasControlador {
               }else{
                  Marcas marcas = marcasOpt.get();
                  marcas.setNombreMarca(nuevaMarca.getNombreMarca());
-                 marcas.setBodega(nuevaMarca.getBodega());
+                 //marcas.setBodega(nuevaMarca.getBodega());
                  marcasServicios.guardarMarca(marcas);
                 return ResponseEntity.ok(new Mensaje("Marca actualizada correctamente"));
 

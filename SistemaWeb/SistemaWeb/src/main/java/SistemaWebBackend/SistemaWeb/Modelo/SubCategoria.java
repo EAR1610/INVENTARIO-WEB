@@ -25,9 +25,9 @@ public class SubCategoria {
     @ManyToOne(optional = false)
     @JoinColumn(name = "idCategoria",  referencedColumnName = "idCategoria")
     private Categoria categoria;
-    @ManyToOne(optional = false)
-    @JoinColumn(name = "idBodega",  referencedColumnName = "idBodega")
-    private Bodega bodega;
+    // @ManyToOne(optional = false)
+    // @JoinColumn(name = "idBodega",  referencedColumnName = "idBodega")
+    // private Bodega bodega;//no
     private boolean estadoSubCategoria;
 
     

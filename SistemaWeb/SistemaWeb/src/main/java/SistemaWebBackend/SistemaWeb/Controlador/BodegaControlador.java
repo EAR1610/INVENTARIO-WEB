@@ -49,7 +49,7 @@ public class BodegaControlador {
             bodega.setNombreBodega(bodega.getNombreBodega());
             bodega.setObservacionBodega(bodega.getObservacionBodega());
             bodega.setPrincipalBodega(bodega.isPrincipalBodega());
-            bodega.setImagenBodega(bodega.getImagenBodega());
+            //bodega.setImagenBodega(bodega.getImagenBodega());
             bodegaServicios.guardarBodega(bodega);
             return ResponseEntity.ok(new Mensaje("Bodega actualizada correctamente"));
            
