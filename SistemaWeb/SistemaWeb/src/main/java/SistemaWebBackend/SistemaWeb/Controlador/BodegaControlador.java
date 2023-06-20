@@ -44,7 +44,7 @@ public class BodegaControlador {
     }
     
     @PutMapping("/actualizarBodega/{id}")
-    public ResponseEntity<?> actualizarPiloto(@PathVariable int id, @RequestBody Bodega bodega) {
+    public ResponseEntity<?> actualizarBodega(@PathVariable int id, @RequestBody Bodega bodega) {
         try {
             bodega.setNombreBodega(bodega.getNombreBodega());
             bodega.setObservacionBodega(bodega.getObservacionBodega());
