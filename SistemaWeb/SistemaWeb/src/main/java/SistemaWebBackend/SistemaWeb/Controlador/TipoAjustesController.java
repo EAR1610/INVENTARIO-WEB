@@ -7,7 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.swing.text.html.Option;
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/tipoAjustes")
@@ -31,15 +33,36 @@ public class TipoAjustesController {
         }
     }
 
-    @PutMapping("/actualizarTipoAjustes/{id}")
-    public ResponseEntity<?> actualizarTipoAjustes(@PathVariable int idTipoAjustes, @RequestBody TipoAjustes tipoAjustes){
+    @PutMapping("/actualizarTipoAjustes/{idTipoAjustes}")
+    public ResponseEntity<?> actualizarTipoAjustes(@PathVariable int idTipoAjustes, @RequestBody TipoAjustes actualizarTipoAjustes){
+        Optional<TipoAjustes> tipoAjustesOptional = tipoAjusteService.gettipoAjustesById(idTipoAjustes);
+        if (!tipoAjustesOptional.isPresent()) {
+            return ResponseEntity.badRequest().body(new Mensaje("El tipoAjuste con id " + idTipoAjustes + " no existe"));
+        }
         try {
-            tipoAjustes.setNombre(tipoAjustes.getNombre());
-            tipoAjustes.setTipo(tipoAjustes.isTipo());
+            TipoAjustes tipoAjustes = tipoAjustesOptional.get();
+            tipoAjustes.setNombre(actualizarTipoAjustes.getNombre());
+            tipoAjustes.setTipo(actualizarTipoAjustes.isTipo());
             tipoAjusteService.guardarTipoAjuste(tipoAjustes);
+
             return ResponseEntity.ok(new Mensaje("Tipo de ajustes actualizada correctamente"));
         } catch (Exception e){
             return ResponseEntity.badRequest().body(new Mensaje("Error al actualizar el tipo de ajustes"));
+        }
+    }
+
+    @DeleteMapping("/eliminarTipoAjustes/{idTipoAjustes}")
+    public ResponseEntity<Mensaje> borrarTipoAjustes(@PathVariable int idTipoAjustes){
+        try {
+            Optional<TipoAjustes> tipoAjuste = tipoAjusteService.borrarTipoAjustes(idTipoAjustes);
+            if (tipoAjuste.isPresent()){
+               return ResponseEntity.ok(new Mensaje("TipoAjuste eliminada correctamente"));
+            } else {
+                return ResponseEntity.badRequest().body(new Mensaje("Error al eliminar el tipoAjuste"));
+            }
+
+        } catch (Exception e){
+            return ResponseEntity.badRequest().body(new Mensaje("Error al eliminar el tipoAjuste: " + e.getMessage()));
         }
     }
 }
