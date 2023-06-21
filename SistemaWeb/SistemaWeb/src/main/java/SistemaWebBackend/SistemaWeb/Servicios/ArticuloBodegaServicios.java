@@ -38,5 +38,9 @@ public class ArticuloBodegaServicios {
             return Optional.empty();
         }
     }
+
+    public Optional<ArticuloBodega> getArticuloBodegaById(int idArticuloBodega) {
+        return articuloBodegaRepositorio.findById(idArticuloBodega);
+    }
     
 }
