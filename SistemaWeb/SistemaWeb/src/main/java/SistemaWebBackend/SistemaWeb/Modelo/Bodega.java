@@ -20,9 +20,9 @@ public class Bodega {
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
     private int idBodega;
-    private String nombreBodega;
-    private String observacionBodega;
-    private boolean principalBodega;
-    private String imagenBodega;
+    private String nombreBodega;//si
+    private String observacionBodega;//si
+    private boolean principalBodega;//si
+    //private String imagenBodega;//no
     private boolean estadoBodega;
 }

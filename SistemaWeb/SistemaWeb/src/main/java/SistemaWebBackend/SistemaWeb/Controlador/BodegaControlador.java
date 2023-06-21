@@ -44,12 +44,12 @@ public class BodegaControlador {
     }
     
     @PutMapping("/actualizarBodega/{id}")
-    public ResponseEntity<?> actualizarPiloto(@PathVariable int id, @RequestBody Bodega bodega) {
+    public ResponseEntity<?> actualizarBodega(@PathVariable int id, @RequestBody Bodega bodega) {
         try {
             bodega.setNombreBodega(bodega.getNombreBodega());
             bodega.setObservacionBodega(bodega.getObservacionBodega());
             bodega.setPrincipalBodega(bodega.isPrincipalBodega());
-            bodega.setImagenBodega(bodega.getImagenBodega());
+            //bodega.setImagenBodega(bodega.getImagenBodega());
             bodegaServicios.guardarBodega(bodega);
             return ResponseEntity.ok(new Mensaje("Bodega actualizada correctamente"));
            

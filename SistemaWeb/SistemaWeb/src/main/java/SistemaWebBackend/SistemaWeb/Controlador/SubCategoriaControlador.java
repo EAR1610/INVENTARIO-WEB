@@ -54,7 +54,7 @@ public class SubCategoriaControlador {
                 SubCategoria subCategoria = subCategoriaOpt.get();
                 subCategoria.setSubCategoria(nuevaSubCategoria.getSubCategoria());
                 subCategoria.setCategoria(nuevaSubCategoria.getCategoria());
-                subCategoria.setBodega(nuevaSubCategoria.getBodega());
+                //subCategoria.setBodega(nuevaSubCategoria.getBodega());
 
                 subCategoriaServicios.guardarSubCategoria(subCategoria);
                 return ResponseEntity.ok(new Mensaje("Sub Categoria actualizada correctamente"));

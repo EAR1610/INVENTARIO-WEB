@@ -69,7 +69,7 @@ public class CategoriaControlador {
         }
         Categoria categoria = categoriaOpt.get();
         categoria.setNombreCategoria(nuevaCategoria.getNombreCategoria());
-        categoria.setBodega(nuevaCategoria.getBodega());
+       // categoria.setBodega(nuevaCategoria.getBodega());
         categoriaServicios.guardarCategoria(categoria);
         return ResponseEntity.ok(new Mensaje("Categoria actualizada correctamente"));
     } catch (Exception e) {
