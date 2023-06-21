@@ -1,6 +1,6 @@
 package SistemaWebBackend.SistemaWeb.Servicios;
 
-import SistemaWebBackend.SistemaWeb.Modelo.Categoria;
+
 import SistemaWebBackend.SistemaWeb.Modelo.TipoAjustes;
 import SistemaWebBackend.SistemaWeb.Repositorio.TipoAjusteRepositorio;
 import org.springframework.beans.factory.annotation.Autowired;
